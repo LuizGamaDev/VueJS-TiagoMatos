@@ -1,133 +1,123 @@
 <template>
   <div>
-    <div 
-      v-for="(obj, index) in users" 
-      :key="obj.id" 
-      class="users-items"
-    >
-      
-      <img 
-        v-if="obj.imgSrc"
-        :src="obj.imgSrc" 
-      /><br />
-
-      Índice: {{ index }} <br />
-      Nome: {{ obj.name }}
+    <div>
+      One-way data binding <br />
+      Two-way data binding <br />
+      v-model -> formulários
     </div>
 
+    <br /><br />
+
+    <div>
+      <label>Nome</label>
+      <br />
+      <input v-model="name" type="text" /> <br />
+      {{ name }}
+    </div>
+
+    <br /><br />
+
+    <div>
+      <label>Sports</label> <br />
+      <select v-model="sports">
+        <option value="">Escolha</option>
+        <option value="futebol">Futebol</option>
+        <option value="skate">Skate</option>
+        <option value="tenis">Tenis</option>
+      </select>
+      <br />
+      {{ sports }}
+    </div>
+
+    <br /><br />
+
+    <div>
+      <label>Newsletter</label> <br />
+      <input v-model="newsletter" type="radio" value="Sim" /> Sim
+
+      <input v-model="newsletter" type="radio" value="Não" /> Não <br />
+      {{ newsletter }}
+    </div>
+
+    <br /><br />
+
+    <div>
+      <label>Contrato</label> <br />
+      <input v-model="contract" type="checkbox" /> Aceita os nossos termos...
+      <br />
+      {{ contract }}
+    </div>
+
+    <br><br>
+
+    <div>
+      <label>Clubes de Lisboa</label> <br />
+      <input v-model="clubes" type="checkbox" value="Sporting CP" /> Sporting CP
+      <input v-model="clubes" type="checkbox" value="SL Benfica" /> SL Benfica
+      <input v-model="clubes" type="checkbox" value="FC Porto" /> FC Porto <br />
+      {{ clubes }}
+    </div>
+  </div>
+
+  <br><br>
+
+  <div>
+    <label>Nome Completo</label> <br>
+    <input v-model="fullName" type="text"> <br>
+    {{ fullName }} <br>
+    <select v-model="gender">
+      <option value="male">Masculino</option>
+      <option value="female">Feminino</option>
+    </select> <br>
+    {{ gender }}
+  </div>
+
+  <br><br>
+
+  <div>
+    <label>Hobbies</label> <br>
+    <input v-model="hobbies" type="checkbox" value="Desporto"> Desporto
+    <input v-model="hobbies" type="checkbox" value="Leitura"> Leitura
+    <input v-model="hobbies" type="checkbox" value="Música"> Música
+    <input v-model="hobbies" type="checkbox" value="Viagem"> Viagem
+    <br>
+    {{ hobbies }}
   </div>
 </template>
 
 <script>
 export default {
-  name: "app",
+  name: "App",
   data() {
     return {
-      users: [
-        {
-          id: 1,
-          name: "Leanne Graham",
-          username: "Bret",
-          email: "Sincere@april.biz",
-          address: {
-            street: "Kulas Light",
-            suite: "Apt. 556",
-            city: "Gwenborough",
-            zipcode: "92998-3874",
-          },
-          phone: "1-770-736-8031 x56442",
-          website: "hildegard.org",
-          company: {
-            name: "Romaguera-Crona",
-            catchPhrase: "Multi-layered client-server neural-net",
-            bs: "harness real-time e-markets",
-          },
-          imgSrc: "https://via.placeholder.com/150",
-        },
-        {
-          id: 2,
-          name: "Ervin Howell",
-          username: "Antonette",
-          email: "Shanna@melissa.tv",
-          address: {
-            street: "Victor Plains",
-            suite: "Suite 879",
-            city: "Wisokyburgh",
-            zipcode: "90566-7771",
-          },
-          phone: "010-692-6593 x09125",
-          website: "anastasia.net",
-          company: {
-            name: "Deckow-Crist",
-            catchPhrase: "Proactive didactic contingency",
-            bs: "synergize scalable supply-chains",
-          },
-          imgSrc: "https://via.placeholder.com/150",
-        },
-        {
-          id: 3,
-          name: "Clementine Bauch",
-          username: "Samantha",
-          email: "Nathan@yesenia.net",
-          address: {
-            street: "Douglas Extension",
-            suite: "Suite 847",
-            city: "McKenziehaven",
-            zipcode: "59590-4157",
-          },
-          phone: "1-463-123-4447",
-          website: "ramiro.info",
-          company: {
-            name: "Romaguera-Jacobson",
-            catchPhrase: "Face to face bifurcated interface",
-            bs: "e-enable strategic applications",
-          },
-        },
-        {
-          id: 4,
-          name: "Patricia Lebsack",
-          username: "Karianne",
-          email: "Julianne.OConner@kory.org",
-          address: {
-            street: "Hoeger Mall",
-            suite: "Apt. 692",
-            city: "South Elvis",
-            zipcode: "53919-4257",
-          },
-          phone: "493-170-9623 x156",
-          website: "kale.biz",
-          company: {
-            name: "Robel-Corkery",
-            catchPhrase: "Multi-tiered zero tolerance productivity",
-            bs: "transition cutting-edge web services",
-          },
-        },
-        {
-          id: 5,
-          name: "Chelsey Dietrich",
-          username: "Kamren",
-          email: "Lucio_Hettinger@annie.ca",
-          address: {
-            street: "Skiles Walks",
-            suite: "Suite 351",
-            city: "Roscoeview",
-            zipcode: "33263",
-          },
-          phone: "(254)954-1289",
-          website: "demarco.info",
-          company: {
-            name: "Keebler LLC",
-            catchPhrase: "User-centric fault-tolerant solution",
-            bs: "revolutionize end-to-end systems",
-          },
-        },
-      ],
+      name: "John Snow",
+      sports: "",
+      newsletter: "Sim",
+      contract: false,
+      clubes: [],
+      fullName: '',
+      gender: 'Escolha o género',
+      hobbies: [],
     };
   },
 };
 </script>
 
 <style>
+.title {
+  font-size: 20px;
+  color: blue;
+}
+.title-home {
+  font-size: 30px;
+  color: darkolivegreen;
+}
+.text {
+  color: brown;
+}
+.text-home {
+  color: blueviolet;
+}
 .users-items {
   background-color: #2c3e50;
   color: white;
