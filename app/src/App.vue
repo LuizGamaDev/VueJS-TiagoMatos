@@ -1,9 +1,20 @@
 <template>
   <div>
-    <div v-for="(obj, index) in users" v-bind:key="obj.id" class="users-items">
+    <div 
+      v-for="(obj, index) in users" 
+      :key="obj.id" 
+      class="users-items"
+    >
+      
+      <img 
+        v-if="obj.imgSrc"
+        :src="obj.imgSrc" 
+      /><br />
+
       Índice: {{ index }} <br />
       Nome: {{ obj.name }}
     </div>
+
   </div>
 </template>
 
@@ -31,6 +42,7 @@ export default {
             catchPhrase: "Multi-layered client-server neural-net",
             bs: "harness real-time e-markets",
           },
+          imgSrc: "https://via.placeholder.com/150",
         },
         {
           id: 2,
@@ -50,6 +62,7 @@ export default {
             catchPhrase: "Proactive didactic contingency",
             bs: "synergize scalable supply-chains",
           },
+          imgSrc: "https://via.placeholder.com/150",
         },
         {
           id: 3,
