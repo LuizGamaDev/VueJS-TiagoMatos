@@ -1,22 +1,24 @@
 <template>
   <div>
-    <BaseAlert :variant="variant">
-      {{ text }}
-    </BaseAlert>
+    <TheHeader>
+
+      <template v-slot:description>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum vel eum ut fugit perferendis ad, cumque, quae porro totam praesentium laboriosam deserunt, dolorum et maxime quaerat molestiae nesciunt fugiat accusantium?</p>
+      </template>
+ 
+      Header content - Menu ...
+    </TheHeader>
   </div>
 </template>
 
 <script>
-import BaseAlert from "./components/BaseAlert.vue";
+import TheHeader from "./components/TheHeader.vue";
 
 export default {
   name: "App",
-  components: { BaseAlert },
+  components: { TheHeader },
   data() {
-    return {
-      variant: "danger",
-      text: "Formulário enviado com sucesso!",
-    };
+    return {};
   },
 
   beforeUpdate() {},
