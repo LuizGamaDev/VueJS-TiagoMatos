@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div class="card">Teste</div>
-    <BaseCard />
+    <BaseAlert :variant="variant">
+      {{ text }}
+    </BaseAlert>
   </div>
 </template>
 
 <script>
-import BaseCard from "./components/BaseCard.vue";
+import BaseAlert from "./components/BaseAlert.vue";
 
 export default {
   name: "App",
-  components: { BaseCard },
+  components: { BaseAlert },
   data() {
-    return {};
+    return {
+      variant: "danger",
+      text: "Formulário enviado com sucesso!",
+    };
   },
 
   beforeUpdate() {},
