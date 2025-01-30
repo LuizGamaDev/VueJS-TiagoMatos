@@ -1,24 +1,24 @@
 <template>
   <div>
-    <TheHeader>
-
-      <template v-slot:description>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum vel eum ut fugit perferendis ad, cumque, quae porro totam praesentium laboriosam deserunt, dolorum et maxime quaerat molestiae nesciunt fugiat accusantium?</p>
-      </template>
- 
-      Header content - Menu ...
-    </TheHeader>
+    <BaseAlert 
+    v-if="showAlert"
+    :variant="variant" @close="onClose()">
+      {{ text }}
+    </BaseAlert>
   </div>
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader.vue";
-
+import BaseAlert from "./components/BaseAlert.vue";
 export default {
   name: "App",
-  components: { TheHeader },
+  components: { BaseAlert },
   data() {
-    return {};
+    return {
+      showAlert: true,
+      variant: "success",
+      text: "Formulário foi enviado com sucesso!",
+    };
   },
 
   beforeUpdate() {},
@@ -29,12 +29,14 @@ export default {
   mounted() {},
   beforeUnmount() {},
   unmounted() {},
-
   watch: {},
-
   computed: {},
-
-  methods: {},
+  methods: {
+    onClose() {
+      this.showAlert = false
+      console.log("on close");
+    },
+  },
 };
 </script>
 
